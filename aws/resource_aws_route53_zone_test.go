@@ -569,13 +569,13 @@ resource "aws_route53_zone" "test" {
 }
 
 func testAccRoute53ZoneConfigMultiple() string {
-	return fmt.Sprintf(`
+	return `
 resource "aws_route53_zone" "test" {
   count = 5
 
   name = "subdomain${count.index}.terraformtest.com"
 }
-`)
+`
 }
 
 func testAccRoute53ZoneConfigComment(zoneName, comment string) string {
